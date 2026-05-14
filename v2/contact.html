@@ -7,38 +7,30 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/effects.css">
   <style>
-    .start-hero {
-      background: var(--black);
-      color: var(--white);
+    .start-header {
       padding: 6rem 3rem 5rem;
-    }
-
-    .start-hero__inner {
       max-width: 1200px;
       margin: 0 auto;
     }
 
-    .start-hero__label {
-      font-size: 0.6rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      opacity: 0.35;
-      margin-bottom: 2.5rem;
-      font-weight: 500;
-    }
-
-    .start-hero__title {
+    .start-header__title {
       font-size: clamp(2rem, 4.5vw, 3.5rem);
       font-weight: 500;
       line-height: 1.25;
       letter-spacing: -0.01em;
       text-align: left;
       max-width: 900px;
-      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .start-header__subtitle {
+      font-size: 0.85rem;
+      opacity: 0.5;
+      letter-spacing: 0.1em;
     }
 
     @media (max-width: 900px) {
-      .start-hero { padding: 4rem 1.5rem 3rem; }
+      .start-header { padding: 4rem 1.5rem 3rem; }
     }
   </style>
 </head>
@@ -64,15 +56,12 @@
 
   <div class="page-spacer"></div>
 
-  <!-- Start hero -->
-  <section class="start-hero gradient-animate noise-bg">
-    <div class="start-hero__inner">
-      <div class="start-hero__label" data-reveal>Start a Project</div>
-      <h1 class="start-hero__title" data-reveal data-reveal-delay="200">Let's discuss your next move.</h1>
-    </div>
+  <section class="start-header">
+    <h1 class="start-header__title" data-reveal>Start a Project</h1>
+    <p class="start-header__subtitle" data-reveal data-reveal-delay="200">Let's discuss your next move.</p>
   </section>
 
-  <div class="animated-line animated-line--white"></div>
+  <div class="animated-line" style="max-width: 1200px; margin: 0 auto;"></div>
 
   <section class="section">
     <div class="contact-grid">
