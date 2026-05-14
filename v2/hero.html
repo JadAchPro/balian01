@@ -12,7 +12,39 @@
   <div class="custom-cursor"></div>
   <div class="custom-cursor__dot"></div>
 
-  <!-- No nav on hero page -->
+  <style>
+    .hero__brand {
+      position: absolute;
+      top: 2.5rem;
+      left: 3rem;
+      z-index: 3;
+      color: var(--white);
+    }
+    .hero__brand-name {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    .hero__brand-location {
+      font-size: 0.55rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+    .hero__enter--bottom {
+      position: absolute;
+      bottom: 3.5rem;
+      left: 3rem;
+      z-index: 3;
+    }
+    @media (max-width: 900px) {
+      .hero__brand { top: 1.5rem; left: 1.5rem; }
+      .hero__enter--bottom { bottom: 2.5rem; left: 1.5rem; }
+    }
+  </style>
+
   <section class="hero gradient-animate noise-bg">
     <div class="hero__slides">
       <div class="hero__slide active" style="background-image: url('../img/hero-1.png');"></div>
@@ -23,11 +55,13 @@
       <div class="hero__slide hero__slide--placeholder"></div>
     </div>
     <div class="hero__overlay"></div>
-    <div class="hero__content">
-      <h1 class="hero__title" data-reveal>B A L I A N</h1>
-      <p class="hero__subtitle" data-reveal data-reveal-delay="400">Geneva &nbsp;|&nbsp; Paris</p>
-      <a href="index.html" class="hero__enter" data-reveal data-reveal-delay="800">Enter</a>
+
+    <div class="hero__brand" data-reveal>
+      <div class="hero__brand-name">Balian</div>
+      <div class="hero__brand-location">Geneva &nbsp;| &nbsp;Paris</div>
     </div>
+
+    <a href="index.html" class="hero__enter hero__enter--bottom" data-reveal data-reveal-delay="400">Enter</a>
   </section>
 
   <script src="../js/main.js"></script>
