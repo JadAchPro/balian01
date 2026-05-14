@@ -1,19 +1,333 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BALIAN — Services</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── V5 : Dense, substantial, filled — less whitespace, more weight ── */
+
+    /* ── Hero banner — bold, compact ── */
+    .v5-hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 6rem 3rem 5rem;
+      text-align: center;
+    }
+
+    .v5-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+    }
+
+    .v5-hero p {
+      margin: 0 auto;
+      font-size: 0.85rem;
+      opacity: 0.5;
+      letter-spacing: 0.1em;
+      max-width: 500px;
+    }
+
+    /* ── Scrolling keywords band ── */
+    .v5-marquee {
+      background: var(--black);
+      overflow: hidden;
+      padding: 1.2rem 0;
+    }
+
+    .v5-marquee__track {
+      display: flex;
+      width: max-content;
+      animation: v5-scroll 25s linear infinite;
+    }
+
+    .v5-marquee__item {
+      flex-shrink: 0;
+      color: var(--white);
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.4;
+      padding: 0 2rem;
+      white-space: nowrap;
+    }
+
+    .v5-marquee__sep {
+      flex-shrink: 0;
+      color: var(--white);
+      opacity: 0.15;
+      padding: 0 0.5rem;
+      font-size: 0.5rem;
+    }
+
+    @keyframes v5-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── Pillars — full-width dense cards ── */
+    .v5-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .v5-pillar {
+      padding: 3.5rem 2.5rem 3rem;
+      border-right: 1px solid rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      position: relative;
+      transition: all 0.35s ease;
+    }
+
+    .v5-pillar:last-child {
+      border-right: none;
+    }
+
+    .v5-pillar:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .v5-pillar__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.5rem;
+    }
+
+    .v5-pillar__num {
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.3;
+    }
+
+    .v5-pillar__arrow {
+      font-size: 1rem;
+      opacity: 0.15;
+      transition: opacity 0.3s;
+    }
+
+    .v5-pillar:hover .v5-pillar__arrow {
+      opacity: 0.6;
+    }
+
+    .v5-pillar h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .v5-pillar p {
+      font-size: 0.82rem;
+      opacity: 0.6;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .v5-pillar__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .v5-pillar__tag {
+      font-size: 0.5rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.6rem;
+      border: 1px solid rgba(128,128,128,0.25);
+      opacity: 0.55;
+    }
+
+    .v5-pillar:hover .v5-pillar__tag {
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    /* ── Approach section ── */
+    .v5-approach {
+      background: var(--grey);
+      padding: 4rem 3rem;
+    }
+
+    .v5-approach__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      max-width: 1100px;
+      margin: 0 auto 3rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .v5-approach__header h2 {
+      margin: 0;
+    }
+
+    .v5-approach__header p {
+      font-size: 0.75rem;
+      opacity: 0.4;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin: 0;
+      text-align: right;
+      max-width: 350px;
+    }
+
+    /* Tiers — dense horizontal rows */
+    .v5-tiers {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .v5-tier {
+      display: grid;
+      grid-template-columns: 100px 200px 1fr 120px;
+      align-items: center;
+      padding: 2rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      gap: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .v5-tier:hover {
+      background: var(--black);
+      color: var(--white);
+      padding-left: 2rem;
+      padding-right: 2rem;
+      margin-left: -2rem;
+      margin-right: -2rem;
+    }
+
+    .v5-tier__num {
+      font-size: 2rem;
+      font-weight: 200;
+      opacity: 0.12;
+    }
+
+    .v5-tier:hover .v5-tier__num {
+      opacity: 0.25;
+    }
+
+    .v5-tier h3 {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .v5-tier p {
+      font-size: 0.82rem;
+      opacity: 0.6;
+      margin: 0;
+    }
+
+    .v5-tier__cta {
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.3;
+      text-align: right;
+      transition: opacity 0.3s;
+    }
+
+    .v5-tier:hover .v5-tier__cta {
+      opacity: 0.7;
+    }
+
+    /* ── Bottom CTA + footer — merged black block ── */
+    .v5-cta-block {
+      background: var(--black);
+      color: var(--white);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      padding: 4rem 4rem;
+      gap: 3rem;
+    }
+
+    .v5-cta-block h2 {
+      color: var(--white);
+      margin: 0;
+      font-size: clamp(1.3rem, 3vw, 2rem);
+    }
+
+    .v5-cta-block .cta-btn {
+      border-color: rgba(255,255,255,0.4);
+      color: var(--white);
+      white-space: nowrap;
+    }
+
+    .v5-cta-block .cta-btn:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .v5-footer-dark {
+      background: var(--black);
+      padding: 2rem 4rem;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .v5-footer-dark p {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.25;
+      color: var(--white);
+      margin: 0 auto;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .v5-marquee__item {
+        padding: 0 1.2rem;
+      }
+      .v5-pillars {
+        grid-template-columns: 1fr;
+      }
+      .v5-pillar {
+        border-right: none;
+      }
+      .v5-approach__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .v5-approach__header p {
+        text-align: left;
+      }
+      .v5-tier {
+        grid-template-columns: 60px 1fr;
+        gap: 1rem;
+      }
+      .v5-tier h3 {
+        grid-column: 1 / -1;
+      }
+      .v5-tier p {
+        grid-column: 1 / -1;
+      }
+      .v5-tier__cta {
+        grid-column: 1 / -1;
+        text-align: left;
+      }
+      .v5-cta-block {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 3rem 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <nav class="nav">
     <a href="hero.html" class="nav__logo">Balian</a>
     <button class="nav__toggle" aria-label="Menu">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
     <ul class="nav__links">
       <li><a href="index.html">Portfolio</a></li>
@@ -25,65 +339,121 @@
 
   <div class="page-spacer"></div>
 
-  <!-- Piliers -->
-  <section class="section">
-    <div class="section__header">
-      <h2>What We Do</h2>
-      <p>Three pillars. One obsession: elevating your brand above the noise.</p>
-    </div>
-
-    <div class="pillars">
-      <div class="pillar">
-        <div class="pillar__icon">◈</div>
-        <h3>Marque</h3>
-        <p>Identity, positioning, visual language. We build brands that command attention and inspire loyalty — from naming to complete brand systems.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar__icon">◉</div>
-        <h3>Visibilité</h3>
-        <p>Content strategy, social presence, media relations. We place your brand where it matters — in front of the right audience, at the right moment.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar__icon">◎</div>
-        <h3>Conversion</h3>
-        <p>Funnels, campaigns, performance. We turn attention into action — measurable results that fuel sustainable growth.</p>
-      </div>
-    </div>
+  <!-- Hero banner -->
+  <section class="v5-hero">
+    <h1>Services</h1>
+    <p>Three pillars. One obsession: elevating your brand above the noise.</p>
   </section>
 
-  <!-- Volets -->
-  <section class="section section--grey">
-    <div class="section__header">
+  <!-- 3 Pillars — dense cards -->
+  <div class="v5-pillars">
+    <div class="v5-pillar">
+      <div class="v5-pillar__head">
+        <span class="v5-pillar__num">01</span>
+        <span class="v5-pillar__arrow">↗</span>
+      </div>
+      <h3>Brand</h3>
+      <p>Identity, positioning, visual language. We build brands that command attention and inspire loyalty — from naming to complete brand systems.</p>
+      <div class="v5-pillar__tags">
+        <span class="v5-pillar__tag">Naming</span>
+        <span class="v5-pillar__tag">Identity</span>
+        <span class="v5-pillar__tag">Positioning</span>
+        <span class="v5-pillar__tag">Art Direction</span>
+      </div>
+    </div>
+    <div class="v5-pillar">
+      <div class="v5-pillar__head">
+        <span class="v5-pillar__num">02</span>
+        <span class="v5-pillar__arrow">↗</span>
+      </div>
+      <h3>Visibility</h3>
+      <p>Content strategy, social presence, media relations. We place your brand where it matters — in front of the right audience, at the right moment.</p>
+      <div class="v5-pillar__tags">
+        <span class="v5-pillar__tag">Content</span>
+        <span class="v5-pillar__tag">Social Media</span>
+        <span class="v5-pillar__tag">PR</span>
+        <span class="v5-pillar__tag">SEO</span>
+      </div>
+    </div>
+    <div class="v5-pillar">
+      <div class="v5-pillar__head">
+        <span class="v5-pillar__num">03</span>
+        <span class="v5-pillar__arrow">↗</span>
+      </div>
+      <h3>Conversion</h3>
+      <p>Funnels, campaigns, performance. We turn attention into action — measurable results that fuel sustainable growth.</p>
+      <div class="v5-pillar__tags">
+        <span class="v5-pillar__tag">Funnels</span>
+        <span class="v5-pillar__tag">Paid Ads</span>
+        <span class="v5-pillar__tag">Analytics</span>
+        <span class="v5-pillar__tag">Growth</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scrolling keywords -->
+  <div class="v5-marquee">
+    <div class="v5-marquee__track">
+      <span class="v5-marquee__item">Brand Strategy</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Art Direction</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Content Production</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Social Media</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Performance Marketing</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">SEO</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Paid Campaigns</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Visual Identity</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Media Relations</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Growth</span><span class="v5-marquee__sep">◆</span>
+      <!-- duplicate for seamless loop -->
+      <span class="v5-marquee__item">Brand Strategy</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Art Direction</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Content Production</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Social Media</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Performance Marketing</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">SEO</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Paid Campaigns</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Visual Identity</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Media Relations</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Growth</span><span class="v5-marquee__sep">◆</span>
+    </div>
+  </div>
+
+  <!-- Approach / Tiers -->
+  <section class="v5-approach">
+    <div class="v5-approach__header">
       <h2>Our Approach</h2>
       <p>Three tiers of engagement, tailored to where you are and where you want to go.</p>
     </div>
 
-    <div class="tiers">
-      <div class="tier">
-        <div class="tier__number">Tier 01</div>
+    <div class="v5-tiers">
+      <div class="v5-tier">
+        <div class="v5-tier__num">01</div>
         <h3>Reveal</h3>
         <p>Audit, strategy, brand foundations. We uncover what makes you unique and craft the blueprint for your market presence.</p>
+        <div class="v5-tier__cta">Learn more ↗</div>
       </div>
-      <div class="tier">
-        <div class="tier__number">Tier 02</div>
+      <div class="v5-tier">
+        <div class="v5-tier__num">02</div>
         <h3>Elevate</h3>
         <p>Full execution — brand identity, content production, channel activation. We bring the strategy to life with precision and craft.</p>
+        <div class="v5-tier__cta">Most popular ↗</div>
       </div>
-      <div class="tier">
-        <div class="tier__number">Tier 03</div>
+      <div class="v5-tier">
+        <div class="v5-tier__num">03</div>
         <h3>Reign</h3>
         <p>Ongoing partnership — performance optimization, market expansion, brand guardianship. We scale what works and protect what matters.</p>
+        <div class="v5-tier__cta">Learn more ↗</div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section" style="text-align: center;">
-    <h2 style="margin-bottom: 2rem;">Ready to Begin?</h2>
-    <a href="contact.html" class="cta-btn">Get in Touch</a>
-  </section>
+  <!-- Bottom CTA -->
+  <div class="v5-cta-block">
+    <h2>Ready to Build Something That Lasts?</h2>
+    <a href="contact.html" class="cta-btn">Book a Call &nbsp;↗</a>
+  </div>
 
-  <footer class="footer">
+  <footer class="v5-footer-dark">
     <p>&copy; 2026 Balian. All rights reserved.</p>
   </footer>
 
