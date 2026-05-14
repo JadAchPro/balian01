@@ -40,6 +40,10 @@
       transform: translateX(-50%);
       z-index: 3;
     }
+    body.fade-out {
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
     @media (max-width: 900px) {
       .hero__brand { top: 1.5rem; left: 1.5rem; }
     }
@@ -66,5 +70,13 @@
 
   <script src="../js/main.js"></script>
   <script src="../js/effects.js"></script>
+  <script>
+    document.querySelector('.hero__enter').addEventListener('click', function(e) {
+      e.preventDefault();
+      var href = this.href;
+      document.body.classList.add('fade-out');
+      setTimeout(function() { window.location.href = href; }, 800);
+    });
+  </script>
 </body>
 </html>
