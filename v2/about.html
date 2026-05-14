@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BALIAN — About</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/effects.css">
+  <style>
+    .about-statement {
+      padding: 6rem 3rem 5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .about-statement__label {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.35;
+      margin-bottom: 2.5rem;
+      font-weight: 500;
+    }
+    .about-statement__text {
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      text-align: left;
+      max-width: 1000px;
+    }
+    @media (max-width: 900px) {
+      .about-statement { padding: 4rem 1.5rem 3rem; }
+    }
+  </style>
+</head>
+<body class="has-custom-cursor">
+
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor__dot"></div>
+
+  <nav class="nav">
+    <a href="hero.html" class="nav__logo">Balian</a>
+    <button class="nav__toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav__links">
+      <li><a href="index.html">Portfolio</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-spacer"></div>
+
+  <!-- Vision -->
+  <section class="about-statement">
+    <div class="about-statement__label" data-reveal>About Balian</div>
+    <p class="about-statement__text" data-reveal data-reveal-delay="200">Bespoke engagement for brands that refuse to blend in. We operate at the intersection of strategic precision and aesthetic ambition — building identities that <span data-rotator="endure|convert|command respect">endure</span>.</p>
+  </section>
+
+  <div class="animated-line" style="max-width: 1200px; margin: 0 auto;"></div>
+
+  <!-- Équipe -->
+  <section class="section section--grey noise-bg">
+    <div class="section__header" data-reveal>
+      <h2>Team</h2>
+    </div>
+
+    <div class="team">
+      <div class="team-member" data-reveal data-reveal-delay="0">
+        <div class="team-member__photo">
+          <span>Photo</span>
+        </div>
+        <h3 class="team-member__name">Jad</h3>
+        <p class="team-member__role">Founder</p>
+      </div>
+      <div class="team-member" data-reveal data-reveal-delay="200">
+        <div class="team-member__photo">
+          <span>Photo</span>
+        </div>
+        <h3 class="team-member__name">Farah</h3>
+        <p class="team-member__role">Co-Founder</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Balian. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/effects.js"></script>
+</body>
+</html>

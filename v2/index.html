@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BALIAN — Portfolio</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/effects.css">
+  <style>
+    .portfolio-statement {
+      padding: 6rem 3rem 5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .portfolio-statement__label {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.35;
+      margin-bottom: 2.5rem;
+      font-weight: 500;
+    }
+
+    .portfolio-statement__text {
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      text-align: left;
+      max-width: 1000px;
+    }
+
+    @media (max-width: 900px) {
+      .portfolio-statement {
+        padding: 4rem 1.5rem 3rem;
+      }
+    }
+  </style>
+</head>
+<body class="has-custom-cursor">
+
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor__dot"></div>
+
+  <nav class="nav">
+    <a href="hero.html" class="nav__logo">Balian</a>
+    <button class="nav__toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav__links">
+      <li><a href="index.html">Portfolio</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-spacer"></div>
+
+  <section class="portfolio-statement">
+    <div class="portfolio-statement__label" data-reveal>Portfolio</div>
+    <p class="portfolio-statement__text" data-reveal data-reveal-delay="200">Based between Geneva and Paris, we serve a selective roster of clients in <span data-rotator="hospitality|wellness|luxury retail|professional services">hospitality</span>.</p>
+  </section>
+
+  <div class="animated-line" style="max-width: 1200px; margin: 0 auto;"></div>
+
+  <section class="section" style="padding-top: 3rem;">
+    <div class="section__header" data-reveal>
+      <p>Selected work for discerning brands.</p>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-card portfolio-card--placeholder" data-reveal data-reveal-delay="0">
+        <span>Coming Soon</span>
+      </div>
+      <div class="portfolio-card portfolio-card--placeholder" data-reveal data-reveal-delay="150">
+        <span>Coming Soon</span>
+      </div>
+      <div class="portfolio-card portfolio-card--placeholder" data-reveal data-reveal-delay="300">
+        <span>Coming Soon</span>
+      </div>
+      <div class="portfolio-card portfolio-card--placeholder" data-reveal data-reveal-delay="450">
+        <span>Coming Soon</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Balian. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/effects.js"></script>
+</body>
+</html>
