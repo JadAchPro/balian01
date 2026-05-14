@@ -33,15 +33,15 @@
       text-transform: uppercase;
       opacity: 0.5;
     }
-    .hero__enter--bottom {
+    .hero__enter--center {
       position: absolute;
-      bottom: 3.5rem;
-      left: 3rem;
+      bottom: 25vh;
+      left: 50%;
+      transform: translateX(-50%);
       z-index: 3;
     }
     @media (max-width: 900px) {
       .hero__brand { top: 1.5rem; left: 1.5rem; }
-      .hero__enter--bottom { bottom: 2.5rem; left: 1.5rem; }
     }
   </style>
 
@@ -61,7 +61,7 @@
       <div class="hero__brand-location">Geneva &nbsp;| &nbsp;Paris</div>
     </div>
 
-    <a href="index.html" class="hero__enter hero__enter--bottom" data-reveal data-reveal-delay="400">Enter</a>
+    <a href="index.html" class="hero__enter hero__enter--center" data-reveal data-reveal-delay="400">Enter</a>
   </section>
 
   <script src="../js/main.js"></script>
