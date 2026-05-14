@@ -5,8 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BALIAN — Services v5</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
   <style>
     /* ── V5 : Dense, substantial, filled — less whitespace, more weight ── */
+
+    /* Override font to typewriter style */
+    body, .v5-hero h1, .v5-hero p, .v5-pillar h3, .v5-pillar p,
+    .v5-pillar__num, .v5-pillar__tag, .v5-pillar__arrow,
+    .v5-marquee__item, .v5-marquee__sep,
+    .v5-approach__header h2, .v5-approach__header p,
+    .v5-tier h3, .v5-tier p, .v5-tier__num, .v5-tier__cta,
+    .v5-cta-block h2, .v5-cta-block .cta-btn,
+    .v5-footer-dark p, .nav__logo, .nav__links a {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+    }
 
     /* ── Hero banner — bold, compact ── */
     .v5-hero {
@@ -35,10 +47,9 @@
 
     /* ── Scrolling keywords band ── */
     .v5-marquee {
-      background: #111;
+      background: var(--black);
       overflow: hidden;
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 1.2rem 0;
     }
 
     .v5-marquee__track {
@@ -346,33 +357,6 @@
     <p>Three pillars. One obsession: elevating your brand above the noise.</p>
   </section>
 
-  <!-- Scrolling keywords -->
-  <div class="v5-marquee">
-    <div class="v5-marquee__track">
-      <span class="v5-marquee__item">Brand Strategy</span><span class="v5-marquee__sep">◆</span>
-      <span class="v5-marquee__item">Art Direction</span><span class="v5-marquee__sep">◆</span>
-      <span class="v5-marquee__item">Content Production</span><span class="v5-marquee__sep">◆</span>
-      <span class="v5-marquee__item">Social Media</span><span class="v5-marquee__sep">◆</span>
-      <span class="v5-marquee__item">Performance Marketing</span><span class="v5-marquee__sep">◆</span>
-      <span class="v5-marquee__item">SEO</span><span class="v5-marquee__sep">◆</span>
-      <span class="v5-marquee__item">Paid Campaigns</span><span class="v5-marquee__sep">◆</span>
-      <span class="v5-marquee__item">Visual Identity</span><span class="v5-marquee__sep">◆</span>
-      <span class="v5-marquee__item">Media Relations</span><span class="v5-marquee__sep">◆</span>
-      <span class="v5-marquee__item">Growth</span><span class="v5-marquee__sep">◆</span>
-      <!-- duplicate for seamless loop -->
-      <span class="v5-marquee__item">Brand Strategy</span><span class="v5-marquee__sep">◆</span>
-      <span class="v5-marquee__item">Art Direction</span><span class="v5-marquee__sep">◆</span>
-      <span class="v5-marquee__item">Content Production</span><span class="v5-marquee__sep">◆</span>
-      <span class="v5-marquee__item">Social Media</span><span class="v5-marquee__sep">◆</span>
-      <span class="v5-marquee__item">Performance Marketing</span><span class="v5-marquee__sep">◆</span>
-      <span class="v5-marquee__item">SEO</span><span class="v5-marquee__sep">◆</span>
-      <span class="v5-marquee__item">Paid Campaigns</span><span class="v5-marquee__sep">◆</span>
-      <span class="v5-marquee__item">Visual Identity</span><span class="v5-marquee__sep">◆</span>
-      <span class="v5-marquee__item">Media Relations</span><span class="v5-marquee__sep">◆</span>
-      <span class="v5-marquee__item">Growth</span><span class="v5-marquee__sep">◆</span>
-    </div>
-  </div>
-
   <!-- 3 Pillars — dense cards -->
   <div class="v5-pillars">
     <div class="v5-pillar">
@@ -416,6 +400,33 @@
         <span class="v5-pillar__tag">Analytics</span>
         <span class="v5-pillar__tag">Growth</span>
       </div>
+    </div>
+  </div>
+
+  <!-- Scrolling keywords -->
+  <div class="v5-marquee">
+    <div class="v5-marquee__track">
+      <span class="v5-marquee__item">Brand Strategy</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Art Direction</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Content Production</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Social Media</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Performance Marketing</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">SEO</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Paid Campaigns</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Visual Identity</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Media Relations</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Growth</span><span class="v5-marquee__sep">◆</span>
+      <!-- duplicate for seamless loop -->
+      <span class="v5-marquee__item">Brand Strategy</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Art Direction</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Content Production</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Social Media</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Performance Marketing</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">SEO</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Paid Campaigns</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Visual Identity</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Media Relations</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Growth</span><span class="v5-marquee__sep">◆</span>
     </div>
   </div>
 
