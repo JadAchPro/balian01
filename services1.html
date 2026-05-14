@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BALIAN — Services v1</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── V1 : Full-width horizontal rows + tiers side-by-side ── */
+
+    .v1-pillars {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .v1-pillar {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      align-items: start;
+      padding: 4rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .v1-pillar:last-child {
+      border-bottom: none;
+    }
+
+    .v1-pillar__number {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.35;
+      padding-top: 0.3rem;
+    }
+
+    .v1-pillar__body h3 {
+      margin-bottom: 1.2rem;
+    }
+
+    .v1-pillar__body p {
+      opacity: 0.6;
+      font-size: 0.85rem;
+      max-width: 550px;
+    }
+
+    /* Tiers as 3 equal columns with heavy vertical borders */
+    .v1-tiers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .v1-tier {
+      padding: 4rem 2.5rem;
+      border-right: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .v1-tier:last-child {
+      border-right: none;
+    }
+
+    .v1-tier__label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.35;
+      margin-bottom: 2rem;
+    }
+
+    .v1-tier h3 {
+      margin-bottom: 1.5rem;
+    }
+
+    .v1-tier p {
+      opacity: 0.6;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .v1-pillar {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+      .v1-tiers {
+        grid-template-columns: 1fr;
+      }
+      .v1-tier {
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="hero.html" class="nav__logo">Balian</a>
+    <button class="nav__toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links">
+      <li><a href="index.html">Portfolio</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-spacer"></div>
+
+  <!-- Pillars — horizontal rows, number left, content right -->
+  <section class="section">
+    <div class="section__header">
+      <h2>What We Do</h2>
+      <p>Three pillars. One obsession: elevating your brand above the noise.</p>
+    </div>
+
+    <div class="v1-pillars">
+      <div class="v1-pillar">
+        <div class="v1-pillar__number">01</div>
+        <div class="v1-pillar__body">
+          <h3>Brand</h3>
+          <p>Identity, positioning, visual language. We build brands that command attention and inspire loyalty — from naming to complete brand systems.</p>
+        </div>
+      </div>
+      <div class="v1-pillar">
+        <div class="v1-pillar__number">02</div>
+        <div class="v1-pillar__body">
+          <h3>Visibility</h3>
+          <p>Content strategy, social presence, media relations. We place your brand where it matters — in front of the right audience, at the right moment.</p>
+        </div>
+      </div>
+      <div class="v1-pillar">
+        <div class="v1-pillar__number">03</div>
+        <div class="v1-pillar__body">
+          <h3>Conversion</h3>
+          <p>Funnels, campaigns, performance. We turn attention into action — measurable results that fuel sustainable growth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tiers — 3 vertical columns with borders -->
+  <section class="section section--grey">
+    <div class="section__header">
+      <h2>Our Approach</h2>
+      <p>Three tiers of engagement, tailored to where you are and where you want to go.</p>
+    </div>
+
+    <div class="v1-tiers">
+      <div class="v1-tier">
+        <div class="v1-tier__label">Tier 01</div>
+        <h3>Reveal</h3>
+        <p>Audit, strategy, brand foundations. We uncover what makes you unique and craft the blueprint for your market presence.</p>
+      </div>
+      <div class="v1-tier">
+        <div class="v1-tier__label">Tier 02</div>
+        <h3>Elevate</h3>
+        <p>Full execution — brand identity, content production, channel activation. We bring the strategy to life with precision and craft.</p>
+      </div>
+      <div class="v1-tier">
+        <div class="v1-tier__label">Tier 03</div>
+        <h3>Reign</h3>
+        <p>Ongoing partnership — performance optimization, market expansion, brand guardianship. We scale what works and protect what matters.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="text-align: center;">
+    <h2 style="margin-bottom: 2rem;">Ready to Begin?</h2>
+    <a href="contact.html" class="cta-btn">Get in Touch</a>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Balian. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

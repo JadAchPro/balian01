@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BALIAN — Services v3</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── V3 : Full-screen immersive sections — one per pillar ── */
+
+    .v3-fullscreen {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 3rem;
+      position: relative;
+    }
+
+    .v3-fullscreen--dark {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .v3-fullscreen__inner {
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .v3-fullscreen__number {
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      opacity: 0.25;
+      margin-bottom: 3rem;
+    }
+
+    .v3-fullscreen__inner h2 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 2rem;
+      color: inherit;
+    }
+
+    .v3-fullscreen--dark h2 {
+      color: var(--white);
+    }
+
+    .v3-fullscreen__inner p {
+      margin: 0 auto;
+      opacity: 0.6;
+      font-size: 0.95rem;
+      line-height: 1.9;
+    }
+
+    .v3-fullscreen__line {
+      width: 40px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.15;
+      margin: 3rem auto 0;
+    }
+
+    /* Intro section */
+    .v3-intro {
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8rem 3rem;
+      text-align: center;
+    }
+
+    .v3-intro p {
+      margin: 1.5rem auto 0;
+      opacity: 0.5;
+    }
+
+    /* Tiers — horizontal scroll-like cards */
+    .v3-tiers-section {
+      padding: 8rem 3rem;
+    }
+
+    .v3-tiers-header {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .v3-tiers-header p {
+      margin: 1.5rem auto 0;
+      opacity: 0.5;
+    }
+
+    .v3-tiers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 1100px;
+      margin: 0 auto;
+      gap: 0;
+    }
+
+    .v3-tier {
+      padding: 4rem 2.5rem;
+      text-align: center;
+      position: relative;
+      transition: all 0.4s ease;
+    }
+
+    .v3-tier::after {
+      content: '';
+      position: absolute;
+      top: 20%;
+      right: 0;
+      height: 60%;
+      width: 1px;
+      background: rgba(0,0,0,0.08);
+    }
+
+    .v3-tier:last-child::after {
+      display: none;
+    }
+
+    .v3-tier:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .v3-tier__number {
+      font-size: 2.5rem;
+      font-weight: 200;
+      letter-spacing: 0.1em;
+      opacity: 0.1;
+      margin-bottom: 2rem;
+    }
+
+    .v3-tier h3 {
+      margin-bottom: 1.5rem;
+    }
+
+    .v3-tier p {
+      margin: 0 auto;
+      opacity: 0.6;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .v3-fullscreen {
+        min-height: auto;
+        padding: 5rem 1.5rem;
+      }
+      .v3-tiers {
+        grid-template-columns: 1fr;
+      }
+      .v3-tier::after {
+        top: auto;
+        bottom: 0;
+        left: 20%;
+        right: 20%;
+        width: auto;
+        height: 1px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="hero.html" class="nav__logo">Balian</a>
+    <button class="nav__toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links">
+      <li><a href="index.html">Portfolio</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-spacer"></div>
+
+  <!-- Intro -->
+  <div class="v3-intro">
+    <div>
+      <h2>What We Do</h2>
+      <p>Three pillars. One obsession: elevating your brand above the noise.</p>
+    </div>
+  </div>
+
+  <!-- Pillar 1 — White -->
+  <div class="v3-fullscreen">
+    <div class="v3-fullscreen__inner">
+      <div class="v3-fullscreen__number">Pillar 01</div>
+      <h2>Brand</h2>
+      <p>Identity, positioning, visual language. We build brands that command attention and inspire loyalty — from naming to complete brand systems.</p>
+      <div class="v3-fullscreen__line"></div>
+    </div>
+  </div>
+
+  <!-- Pillar 2 — Dark -->
+  <div class="v3-fullscreen v3-fullscreen--dark">
+    <div class="v3-fullscreen__inner">
+      <div class="v3-fullscreen__number">Pillar 02</div>
+      <h2>Visibility</h2>
+      <p>Content strategy, social presence, media relations. We place your brand where it matters — in front of the right audience, at the right moment.</p>
+      <div class="v3-fullscreen__line"></div>
+    </div>
+  </div>
+
+  <!-- Pillar 3 — White -->
+  <div class="v3-fullscreen">
+    <div class="v3-fullscreen__inner">
+      <div class="v3-fullscreen__number">Pillar 03</div>
+      <h2>Conversion</h2>
+      <p>Funnels, campaigns, performance. We turn attention into action — measurable results that fuel sustainable growth.</p>
+      <div class="v3-fullscreen__line"></div>
+    </div>
+  </div>
+
+  <!-- Tiers -->
+  <div class="v3-tiers-section" style="background: var(--grey);">
+    <div class="v3-tiers-header">
+      <h2>Our Approach</h2>
+      <p>Three tiers of engagement, tailored to where you are and where you want to go.</p>
+    </div>
+
+    <div class="v3-tiers">
+      <div class="v3-tier">
+        <div class="v3-tier__number">01</div>
+        <h3>Reveal</h3>
+        <p>Audit, strategy, brand foundations. We uncover what makes you unique and craft the blueprint for your market presence.</p>
+      </div>
+      <div class="v3-tier">
+        <div class="v3-tier__number">02</div>
+        <h3>Elevate</h3>
+        <p>Full execution — brand identity, content production, channel activation. We bring the strategy to life with precision and craft.</p>
+      </div>
+      <div class="v3-tier">
+        <div class="v3-tier__number">03</div>
+        <h3>Reign</h3>
+        <p>Ongoing partnership — performance optimization, market expansion, brand guardianship. We scale what works and protect what matters.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="section" style="text-align: center;">
+    <h2 style="margin-bottom: 2rem;">Ready to Begin?</h2>
+    <a href="contact.html" class="cta-btn">Get in Touch</a>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Balian. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
