@@ -33,37 +33,42 @@
       max-width: 500px;
     }
 
-    /* ── Stats bar ── */
-    .v5-stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+    /* ── Scrolling keywords band ── */
+    .v5-marquee {
       background: #111;
+      overflow: hidden;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .v5-marquee__track {
+      display: flex;
+      width: max-content;
+      animation: v5-scroll 25s linear infinite;
+    }
+
+    .v5-marquee__item {
+      flex-shrink: 0;
       color: var(--white);
-    }
-
-    .v5-stat {
-      padding: 2rem 1.5rem;
-      text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .v5-stat:last-child {
-      border-right: none;
-    }
-
-    .v5-stat strong {
-      display: block;
-      font-size: 1.6rem;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.3rem;
-    }
-
-    .v5-stat span {
-      font-size: 0.55rem;
-      letter-spacing: 0.2em;
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       opacity: 0.4;
+      padding: 0 2rem;
+      white-space: nowrap;
+    }
+
+    .v5-marquee__sep {
+      flex-shrink: 0;
+      color: var(--white);
+      opacity: 0.15;
+      padding: 0 0.5rem;
+      font-size: 0.5rem;
+    }
+
+    @keyframes v5-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     /* ── Pillars — full-width dense cards ── */
@@ -233,40 +238,7 @@
       opacity: 0.7;
     }
 
-    /* ── Testimonials row ── */
-    .v5-testimonials {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-    }
-
-    .v5-testimonial {
-      padding: 3rem 3rem;
-      border-right: 1px solid rgba(0,0,0,0.06);
-    }
-
-    .v5-testimonial:last-child {
-      border-right: none;
-    }
-
-    .v5-testimonial blockquote {
-      font-size: 0.95rem;
-      font-style: italic;
-      font-weight: 300;
-      line-height: 1.8;
-      opacity: 0.65;
-      margin-bottom: 1.5rem;
-    }
-
-    .v5-testimonial cite {
-      font-size: 0.55rem;
-      font-style: normal;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      opacity: 0.35;
-    }
-
-    /* ── Bottom CTA — bold, full-width ── */
+    /* ── Bottom CTA + footer — merged black block ── */
     .v5-cta-block {
       background: var(--black);
       color: var(--white);
@@ -294,10 +266,26 @@
       color: var(--black);
     }
 
+    .v5-footer-dark {
+      background: var(--black);
+      padding: 2rem 4rem;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .v5-footer-dark p {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.25;
+      color: var(--white);
+      margin: 0 auto;
+    }
+
     /* ── Responsive ── */
     @media (max-width: 900px) {
-      .v5-stats {
-        grid-template-columns: repeat(2, 1fr);
+      .v5-marquee__item {
+        padding: 0 1.2rem;
       }
       .v5-pillars {
         grid-template-columns: 1fr;
@@ -326,13 +314,6 @@
       .v5-tier__cta {
         grid-column: 1 / -1;
         text-align: left;
-      }
-      .v5-testimonials {
-        grid-template-columns: 1fr;
-      }
-      .v5-testimonial {
-        border-right: none;
-        border-bottom: 1px solid rgba(0,0,0,0.06);
       }
       .v5-cta-block {
         grid-template-columns: 1fr;
@@ -365,23 +346,30 @@
     <p>Three pillars. One obsession: elevating your brand above the noise.</p>
   </section>
 
-  <!-- Stats -->
-  <div class="v5-stats">
-    <div class="v5-stat">
-      <strong>—</strong>
-      <span>Clients served</span>
-    </div>
-    <div class="v5-stat">
-      <strong>—</strong>
-      <span>Revenue generated</span>
-    </div>
-    <div class="v5-stat">
-      <strong>—</strong>
-      <span>Brands launched</span>
-    </div>
-    <div class="v5-stat">
-      <strong>—</strong>
-      <span>Markets covered</span>
+  <!-- Scrolling keywords -->
+  <div class="v5-marquee">
+    <div class="v5-marquee__track">
+      <span class="v5-marquee__item">Brand Strategy</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Art Direction</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Content Production</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Social Media</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Performance Marketing</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">SEO</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Paid Campaigns</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Visual Identity</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Media Relations</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Growth</span><span class="v5-marquee__sep">◆</span>
+      <!-- duplicate for seamless loop -->
+      <span class="v5-marquee__item">Brand Strategy</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Art Direction</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Content Production</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Social Media</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Performance Marketing</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">SEO</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Paid Campaigns</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Visual Identity</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Media Relations</span><span class="v5-marquee__sep">◆</span>
+      <span class="v5-marquee__item">Growth</span><span class="v5-marquee__sep">◆</span>
     </div>
   </div>
 
@@ -431,18 +419,6 @@
     </div>
   </div>
 
-  <!-- Testimonials -->
-  <div class="v5-testimonials">
-    <div class="v5-testimonial">
-      <blockquote>"Placeholder for client testimonial — measurable results, specific outcome, genuine voice."</blockquote>
-      <cite>Client Name — Company</cite>
-    </div>
-    <div class="v5-testimonial">
-      <blockquote>"Placeholder for second testimonial — different angle, different industry, same caliber."</blockquote>
-      <cite>Client Name — Company</cite>
-    </div>
-  </div>
-
   <!-- Approach / Tiers -->
   <section class="v5-approach">
     <div class="v5-approach__header">
@@ -478,7 +454,7 @@
     <a href="contact.html" class="cta-btn">Book a Call &nbsp;↗</a>
   </div>
 
-  <footer class="footer">
+  <footer class="v5-footer-dark">
     <p>&copy; 2026 Balian. All rights reserved.</p>
   </footer>
 
