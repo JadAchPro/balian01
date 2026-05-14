@@ -5,6 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BALIAN — Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .portfolio-statement {
+      padding: 6rem 3rem 5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .portfolio-statement__label {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.35;
+      margin-bottom: 2.5rem;
+      font-weight: 500;
+    }
+
+    .portfolio-statement__text {
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      text-align: left;
+      max-width: 1000px;
+    }
+
+    @media (max-width: 900px) {
+      .portfolio-statement {
+        padding: 4rem 1.5rem 3rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -25,9 +56,13 @@
 
   <div class="page-spacer"></div>
 
-  <section class="section">
+  <section class="portfolio-statement">
+    <div class="portfolio-statement__label">Portfolio</div>
+    <p class="portfolio-statement__text">Based between Geneva and Paris, we serve a selective roster of clients in hospitality, wellness, luxury retail, and professional services.</p>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
     <div class="section__header">
-      <h2>Portfolio</h2>
       <p>Selected work for discerning brands.</p>
     </div>
 
