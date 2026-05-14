@@ -3,9 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BALIAN — Contact</title>
+  <title>BALIAN — Start</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/effects.css">
+  <style>
+    .start-hero {
+      background: var(--black);
+      color: var(--white);
+      padding: 6rem 3rem 5rem;
+    }
+
+    .start-hero__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .start-hero__label {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.35;
+      margin-bottom: 2.5rem;
+      font-weight: 500;
+    }
+
+    .start-hero__title {
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      text-align: left;
+      max-width: 900px;
+      color: var(--white);
+    }
+
+    @media (max-width: 900px) {
+      .start-hero { padding: 4rem 1.5rem 3rem; }
+    }
+  </style>
 </head>
 <body class="has-custom-cursor">
 
@@ -23,20 +58,23 @@
       <li><a href="index.html">Portfolio</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="nav__start active">Start</a></li>
     </ul>
   </nav>
 
   <div class="page-spacer"></div>
 
-  <section class="section">
-    <div class="section__header" data-reveal>
-      <h2>Contact</h2>
-      <p>Let's discuss your next move.</p>
+  <!-- Start hero -->
+  <section class="start-hero gradient-animate noise-bg">
+    <div class="start-hero__inner">
+      <div class="start-hero__label" data-reveal>Start a Project</div>
+      <h1 class="start-hero__title" data-reveal data-reveal-delay="200">Let's discuss your next move.</h1>
     </div>
+  </section>
 
-    <div class="animated-line" style="max-width: 1000px; margin: 0 auto 3rem;"></div>
+  <div class="animated-line animated-line--white"></div>
 
+  <section class="section">
     <div class="contact-grid">
       <div class="contact-info">
         <div class="contact-info__item" data-reveal data-reveal-delay="0">

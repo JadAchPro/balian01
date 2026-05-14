@@ -124,6 +124,34 @@ p {
   opacity: 0.6;
 }
 
+/* Active page link */
+.nav__links a.active::after {
+  width: 100%;
+}
+
+.nav__links a.active {
+  opacity: 1;
+}
+
+/* Start button (contact) */
+.nav__start {
+  background: var(--black);
+  color: var(--white) !important;
+  padding: 0.45rem 1rem;
+  font-size: 0.65rem !important;
+  letter-spacing: var(--ls-nav);
+  text-transform: uppercase;
+  transition: opacity var(--transition);
+}
+
+.nav__start::after {
+  display: none !important;
+}
+
+.nav__start:hover {
+  opacity: 0.7 !important;
+}
+
 /* Mobile toggle */
 .nav__toggle {
   display: none;
