@@ -31,6 +31,9 @@
   document.querySelectorAll('[data-rotator]').forEach(function (el) {
     const words = el.dataset.rotator.split('|');
     let index = 0;
+    const fast = el.classList.contains('rotator--highlight');
+    const interval = fast ? 2000 : 3000;
+    const fadeTime = fast ? 200 : 400;
 
     setInterval(function () {
       el.classList.add('rotator--out');
@@ -38,8 +41,8 @@
         index = (index + 1) % words.length;
         el.textContent = words[index];
         el.classList.remove('rotator--out');
-      }, 400);
-    }, 3000);
+      }, fadeTime);
+    }, interval);
   });
 
   /* ── 3. Custom Cursor ── */

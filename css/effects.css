@@ -29,12 +29,18 @@
 /* ── 2. Text Rotator ── */
 [data-rotator] {
   display: inline-block;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+[data-rotator].rotator--highlight {
+  background: var(--black);
+  color: var(--white);
+  padding: 0.05em 0.25em;
 }
 
 .rotator--out {
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(8px);
 }
 
 /* ── 3. Custom Cursor ── */
