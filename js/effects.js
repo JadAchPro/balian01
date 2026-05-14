@@ -32,8 +32,8 @@
     const words = el.dataset.rotator.split('|');
     let index = 0;
     const fast = el.classList.contains('rotator--highlight');
-    const interval = fast ? 2000 : 3000;
-    const fadeTime = fast ? 200 : 400;
+    const interval = fast ? 1200 : 3000;
+    const fadeTime = fast ? 150 : 400;
 
     setInterval(function () {
       el.classList.add('rotator--out');
