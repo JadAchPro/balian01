@@ -63,17 +63,46 @@
     .v5-pillars {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      perspective: 1200px;
     }
-    .v5-pillar {
-      padding: 3.5rem 2.5rem 3rem;
+    .v5-pillar-wrap {
       border-right: 1px solid rgba(0,0,0,0.06);
+      cursor: pointer;
+    }
+    .v5-pillar-wrap:last-child { border-right: none; }
+    .v5-pillar-inner {
       position: relative;
-      transition: all 0.35s ease;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s ease;
+      transform-style: preserve-3d;
+    }
+    .v5-pillar-wrap.flipped .v5-pillar-inner {
+      transform: rotateY(180deg);
+    }
+    .v5-pillar, .v5-pillar-back {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding: 3.5rem 2.5rem 3rem;
+      box-sizing: border-box;
+      transition: background 0.35s ease, color 0.35s ease;
     }
-    .v5-pillar:last-child { border-right: none; }
+    .v5-pillar-back {
+      transform: rotateY(180deg);
+      background: var(--black);
+      color: var(--white);
+    }
+    .v5-pillar-back h3 { font-size: 1.3rem; margin-bottom: 1.2rem; }
+    .v5-pillar-back p { font-size: 0.78rem; opacity: 0.7; line-height: 1.8; margin-bottom: 1rem; }
+    .v5-pillar-back__close {
+      font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase;
+      opacity: 0.4; margin-top: auto; padding-top: 1rem;
+    }
     .v5-pillar:hover { background: var(--black); color: var(--white); }
     .v5-pillar__head {
       display: flex;
@@ -141,7 +170,7 @@
     @media (max-width: 900px) {
       .v5-marquee__item { padding: 0 1.2rem; }
       .v5-pillars { grid-template-columns: 1fr; }
-      .v5-pillar { border-right: none; }
+      .v5-pillar-wrap { border-right: none; }
       .v5-approach__header { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .v5-approach__header p { text-align: left; }
       .v5-tier { grid-template-columns: 60px 1fr; gap: 1rem; }
@@ -173,46 +202,76 @@
 
   <!-- 3 Pillars — full first screen -->
   <div class="v5-pillars" style="min-height: calc(100vh - 80px);">
-    <div class="v5-pillar" data-reveal data-reveal-delay="0">
-      <div class="v5-pillar__head">
-        <span class="v5-pillar__num">01</span>
-        <span class="v5-pillar__arrow">↗</span>
-      </div>
-      <h3>Brand</h3>
-      <p>Identity, positioning, visual language. We build brands that command attention and inspire loyalty — from naming to complete brand systems.</p>
-      <div class="v5-pillar__tags">
-        <span class="v5-pillar__tag">Naming</span>
-        <span class="v5-pillar__tag">Identity</span>
-        <span class="v5-pillar__tag">Positioning</span>
-        <span class="v5-pillar__tag">Art Direction</span>
-      </div>
-    </div>
-    <div class="v5-pillar" data-reveal data-reveal-delay="150">
-      <div class="v5-pillar__head">
-        <span class="v5-pillar__num">02</span>
-        <span class="v5-pillar__arrow">↗</span>
-      </div>
-      <h3>Visibility</h3>
-      <p>Content strategy, social presence, media relations. We place your brand where it matters — in front of the right audience, at the right moment.</p>
-      <div class="v5-pillar__tags">
-        <span class="v5-pillar__tag">Content</span>
-        <span class="v5-pillar__tag">Social Media</span>
-        <span class="v5-pillar__tag">PR</span>
-        <span class="v5-pillar__tag">SEO</span>
+    <div class="v5-pillar-wrap" data-reveal data-reveal-delay="0">
+      <div class="v5-pillar-inner">
+        <div class="v5-pillar">
+          <div class="v5-pillar__head">
+            <span class="v5-pillar__num">01</span>
+            <span class="v5-pillar__arrow">↗</span>
+          </div>
+          <h3>Brand</h3>
+          <p>Identity, positioning, visual language. We build brands that command attention and inspire loyalty — from naming to complete brand systems.</p>
+          <div class="v5-pillar__tags">
+            <span class="v5-pillar__tag">Naming</span>
+            <span class="v5-pillar__tag">Identity</span>
+            <span class="v5-pillar__tag">Positioning</span>
+            <span class="v5-pillar__tag">Art Direction</span>
+          </div>
+        </div>
+        <div class="v5-pillar-back">
+          <h3>Brand — In Detail</h3>
+          <p>We start with deep immersion into your market, audience, and competitive landscape. From there, we craft a brand architecture that defines who you are, how you speak, and how you're perceived.</p>
+          <p>Deliverables include naming conventions, logo systems, typography and color palettes, tone of voice guidelines, and comprehensive brand books ready for deployment across all touchpoints.</p>
+          <div class="v5-pillar-back__close">← Click to return</div>
+        </div>
       </div>
     </div>
-    <div class="v5-pillar" data-reveal data-reveal-delay="300">
-      <div class="v5-pillar__head">
-        <span class="v5-pillar__num">03</span>
-        <span class="v5-pillar__arrow">↗</span>
+    <div class="v5-pillar-wrap" data-reveal data-reveal-delay="150">
+      <div class="v5-pillar-inner">
+        <div class="v5-pillar">
+          <div class="v5-pillar__head">
+            <span class="v5-pillar__num">02</span>
+            <span class="v5-pillar__arrow">↗</span>
+          </div>
+          <h3>Visibility</h3>
+          <p>Content strategy, social presence, media relations. We place your brand where it matters — in front of the right audience, at the right moment.</p>
+          <div class="v5-pillar__tags">
+            <span class="v5-pillar__tag">Content</span>
+            <span class="v5-pillar__tag">Social Media</span>
+            <span class="v5-pillar__tag">PR</span>
+            <span class="v5-pillar__tag">SEO</span>
+          </div>
+        </div>
+        <div class="v5-pillar-back">
+          <h3>Visibility — In Detail</h3>
+          <p>We build editorial calendars, produce high-quality content — photo, video, copy — and manage your social channels with a consistent, elevated voice.</p>
+          <p>On the PR side, we cultivate media relationships, secure press coverage, and position your founders as thought leaders. SEO ensures your brand is discoverable long after campaigns end.</p>
+          <div class="v5-pillar-back__close">← Click to return</div>
+        </div>
       </div>
-      <h3>Conversion</h3>
-      <p>Funnels, campaigns, performance. We turn attention into action — measurable results that fuel sustainable growth.</p>
-      <div class="v5-pillar__tags">
-        <span class="v5-pillar__tag">Funnels</span>
-        <span class="v5-pillar__tag">Paid Ads</span>
-        <span class="v5-pillar__tag">Analytics</span>
-        <span class="v5-pillar__tag">Growth</span>
+    </div>
+    <div class="v5-pillar-wrap" data-reveal data-reveal-delay="300">
+      <div class="v5-pillar-inner">
+        <div class="v5-pillar">
+          <div class="v5-pillar__head">
+            <span class="v5-pillar__num">03</span>
+            <span class="v5-pillar__arrow">↗</span>
+          </div>
+          <h3>Conversion</h3>
+          <p>Funnels, campaigns, performance. We turn attention into action — measurable results that fuel sustainable growth.</p>
+          <div class="v5-pillar__tags">
+            <span class="v5-pillar__tag">Funnels</span>
+            <span class="v5-pillar__tag">Paid Ads</span>
+            <span class="v5-pillar__tag">Analytics</span>
+            <span class="v5-pillar__tag">Growth</span>
+          </div>
+        </div>
+        <div class="v5-pillar-back">
+          <h3>Conversion — In Detail</h3>
+          <p>We design and optimize acquisition funnels — from landing pages to email sequences — engineered to convert traffic into clients.</p>
+          <p>Paid campaigns on Meta, Google, and LinkedIn are managed with rigorous A/B testing and budget optimization. Real-time dashboards give you full transparency on ROI, CAC, and every metric that matters.</p>
+          <div class="v5-pillar-back__close">← Click to return</div>
+        </div>
       </div>
     </div>
   </div>
@@ -287,5 +346,12 @@
 
   <script src="../js/main.js"></script>
   <script src="../js/effects.js"></script>
+  <script>
+    document.querySelectorAll('.v5-pillar-wrap').forEach(function(wrap) {
+      wrap.addEventListener('click', function() {
+        wrap.classList.toggle('flipped');
+      });
+    });
+  </script>
 </body>
 </html>
