@@ -67,9 +67,11 @@
     .v5-pillar {
       padding: 3.5rem 2.5rem 3rem;
       border-right: 1px solid rgba(0,0,0,0.06);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
       position: relative;
       transition: all 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     .v5-pillar:last-child { border-right: none; }
     .v5-pillar:hover { background: var(--black); color: var(--white); }
@@ -169,14 +171,8 @@
 
   <div class="page-spacer"></div>
 
-  <!-- Hero banner with gradient animation + noise -->
-  <section class="v5-hero gradient-animate noise-bg">
-    <h1 data-reveal>Services</h1>
-    <p data-reveal data-reveal-delay="300">Three pillars. One obsession: elevating your brand above the noise.</p>
-  </section>
-
-  <!-- 3 Pillars -->
-  <div class="v5-pillars">
+  <!-- 3 Pillars — full first screen -->
+  <div class="v5-pillars" style="min-height: calc(100vh - 80px);">
     <div class="v5-pillar" data-reveal data-reveal-delay="0">
       <div class="v5-pillar__head">
         <span class="v5-pillar__num">01</span>
