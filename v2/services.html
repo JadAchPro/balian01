@@ -101,7 +101,7 @@
     .v5-pillar-back p { font-size: 0.78rem; opacity: 0.7; line-height: 1.8; margin-bottom: 1rem; }
     .v5-pillar-back__close {
       font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase;
-      opacity: 0.4; margin-top: auto; padding-top: 1rem;
+      opacity: 0.4; padding-top: 1rem;
     }
     .v5-pillar:hover { background: var(--black); color: var(--white); }
     .v5-pillar__head {
@@ -349,7 +349,13 @@
   <script>
     document.querySelectorAll('.v5-pillar-wrap').forEach(function(wrap) {
       wrap.addEventListener('click', function() {
-        wrap.classList.toggle('flipped');
+        var isFlipped = wrap.classList.contains('flipped');
+        document.querySelectorAll('.v5-pillar-wrap.flipped').forEach(function(other) {
+          other.classList.remove('flipped');
+        });
+        if (!isFlipped) {
+          wrap.classList.add('flipped');
+        }
       });
     });
   </script>
