@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BALIAN — Hexagon Paddle</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/effects.css">
+  <style>
+    .project-header {
+      padding: 4rem 3rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .project-header__back {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.4;
+      transition: opacity 0.3s ease;
+      display: inline-block;
+      margin-bottom: 2.5rem;
+    }
+
+    .project-header__back:hover {
+      opacity: 1;
+    }
+
+    .project-header__category {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.35;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .project-header__title {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-header__desc {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      opacity: 0.6;
+      max-width: 600px;
+    }
+
+    .project-gallery {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 3rem 6rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .project-gallery__item {
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .project-gallery__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .project-gallery__item:hover img {
+      transform: scale(1.03);
+    }
+
+    .project-gallery__item--hero {
+      grid-column: 1 / -1;
+      aspect-ratio: 16/9;
+    }
+
+    .project-gallery__item--square {
+      aspect-ratio: 1/1;
+    }
+
+    .project-gallery__item--portrait {
+      aspect-ratio: 3/4;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0,0,0,0.92);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .lightbox__close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      color: #fff;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
+    }
+
+    .lightbox__nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+      font-size: 1.5rem;
+      opacity: 0.5;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 1rem;
+      transition: opacity 0.3s;
+    }
+
+    .lightbox__nav:hover { opacity: 1; }
+    .lightbox__nav--prev { left: 1.5rem; }
+    .lightbox__nav--next { right: 1.5rem; }
+
+    @media (max-width: 900px) {
+      .project-header { padding: 3rem 1.5rem 1.5rem; }
+      .project-gallery {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 1.5rem 4rem;
+      }
+      .project-gallery__item--hero { aspect-ratio: 4/3; }
+    }
+  </style>
+</head>
+<body class="has-custom-cursor">
+
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor__dot"></div>
+
+  <nav class="nav">
+    <a href="hero.html" class="nav__logo">Balian</a>
+    <button class="nav__toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav__links">
+      <li><a href="index.html" class="active">Portfolio</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav__start">Start</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-spacer"></div>
+
+  <section class="project-header">
+    <a href="index.html" class="project-header__back" data-reveal>&larr; Back to portfolio</a>
+    <div class="project-header__category" data-reveal data-reveal-delay="100">Brand Identity</div>
+    <h1 class="project-header__title" data-reveal data-reveal-delay="200">Hexagon Paddle</h1>
+    <p class="project-header__desc" data-reveal data-reveal-delay="300">Premium padel brand — visual identity, art direction and lifestyle photography for a refined sporting experience.</p>
+  </section>
+
+  <section class="project-gallery">
+    <div class="project-gallery__item project-gallery__item--hero" data-reveal data-reveal-delay="0">
+      <img src="img/hexagon-padel/cover.png" alt="Hexagon Paddle — Hero" data-lightbox>
+    </div>
+    <div class="project-gallery__item project-gallery__item--square" data-reveal data-reveal-delay="100">
+      <img src="img/hexagon-padel/2.png" alt="Hexagon Paddle — Team" data-lightbox>
+    </div>
+    <div class="project-gallery__item project-gallery__item--square" data-reveal data-reveal-delay="200">
+      <img src="img/hexagon-padel/3.png" alt="Hexagon Paddle — Action" data-lightbox>
+    </div>
+    <div class="project-gallery__item" data-reveal data-reveal-delay="300">
+      <img src="img/hexagon-padel/4.png" alt="Hexagon Paddle — Lifestyle" data-lightbox>
+    </div>
+    <div class="project-gallery__item" data-reveal data-reveal-delay="400">
+      <img src="img/hexagon-padel/5.png" alt="Hexagon Paddle — Portrait" data-lightbox>
+    </div>
+    <div class="project-gallery__item project-gallery__item--portrait" data-reveal data-reveal-delay="500">
+      <img src="img/hexagon-padel/6.png" alt="Hexagon Paddle — Group" data-lightbox>
+    </div>
+    <div class="project-gallery__item project-gallery__item--portrait" data-reveal data-reveal-delay="600">
+      <img src="img/hexagon-padel/7.png" alt="Hexagon Paddle — Solo" data-lightbox>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close">Close</button>
+    <button class="lightbox__nav lightbox__nav--prev">&lsaquo;</button>
+    <button class="lightbox__nav lightbox__nav--next">&rsaquo;</button>
+    <img src="" alt="">
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Balian. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/effects.js"></script>
+  <script>
+    (function() {
+      const lightbox = document.getElementById('lightbox');
+      const lbImg = lightbox.querySelector('img');
+      const images = Array.from(document.querySelectorAll('[data-lightbox]'));
+      let current = 0;
+
+      images.forEach((img, i) => {
+        img.addEventListener('click', () => { current = i; openLightbox(); });
+      });
+
+      function openLightbox() {
+        lbImg.src = images[current].src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      lightbox.querySelector('.lightbox__close').addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+      lightbox.querySelector('.lightbox__nav--prev').addEventListener('click', (e) => {
+        e.stopPropagation();
+        current = (current - 1 + images.length) % images.length;
+        lbImg.src = images[current].src;
+      });
+
+      lightbox.querySelector('.lightbox__nav--next').addEventListener('click', (e) => {
+        e.stopPropagation();
+        current = (current + 1) % images.length;
+        lbImg.src = images[current].src;
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') { current = (current - 1 + images.length) % images.length; lbImg.src = images[current].src; }
+        if (e.key === 'ArrowRight') { current = (current + 1) % images.length; lbImg.src = images[current].src; }
+      });
+    })();
+  </script>
+</body>
+</html>
